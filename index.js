@@ -1,7 +1,7 @@
 //3秒立つまでnowloadingと表示をする。完了したらcompleteと表示。
 
 function myLoading(){
-    const millSec = 3000
+    const waitTime = 3000
     let showSpace = document.getElementById("showSpace");
 
     return new Promise((resolve, reject)=>{
@@ -11,10 +11,28 @@ function myLoading(){
             console.log("Complete!");
             showSpace.textContent = "Complete!";
             resolve();
-        }, millSec);
+        }, waitTime);
     })
 }
 
+//myLoadingを同期的に行う。なぜか、ボタン押下時にdom変更が出来ない。
+function myLoadingSync(){
+    const waitTime = 3000;
+    let showSpace = document.getElementById("showSpaceSync");
+    console.log("Now Loading...");
+    showSpace.textContent = "Now Loading...";//なぜか実行されない。
+
+    const startTime = Date.now();
+
+    while (Date.now() - startTime < waitTime) {
+    }
+
+    console.log("Complete!");
+    showSpace.textContent = "Complete!";
+
+}
+
+// GitHubユーザー情報を取得する処理。
 function myLoadingFetch(){
     let showSpace = document.getElementById("showSpaceFetch");
     const inputSpace = document.getElementById("inputSpaceFetch")
