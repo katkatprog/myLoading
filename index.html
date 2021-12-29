@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <h1>My Loading</h1>
+    <h4>下のボタンを押すと、nowloading...と表示された後、3秒後にcompleteと表示される。</h4>
+    <button onclick="myLoading()">3秒待機</button>
+    <div id="showSpace"></div><br><br>
+
+    <h4>下記フォームにgithubユーザーのIDを記載しボタンを押下すると、nowloading...と表示され、<br>
+    その後、ユーザー名、名前、画像を表示<br>
+    存在しない場合は、not found という旨のメッセージが表示され、3秒後に消える。</h4>
+    <input type="text" id="inputSpaceFetch" value="katkatprog" placeholder="input github userid">
+    <button onclick="myLoadingFetch()">GET Github Userinfo</button>
+    <div id="showSpaceFetch"></div>
+    
+</body>
+</html>
