@@ -6,7 +6,7 @@ function myLoading(){
 
     return new Promise((resolve, reject)=>{
         console.log("Now Loading...");
-        showSpace.textContent = "Now Loading...";
+        showSpace.innerHTML = "<img src='./pic/load.gif' alt='Now Loading...'>";
         setTimeout(() => {
             console.log("Complete!");
             showSpace.textContent = "Complete!";
@@ -20,7 +20,7 @@ function myLoadingSync(){
     const waitTime = 3000;
     let showSpace = document.getElementById("showSpaceSync");
     console.log("Now Loading...");
-    showSpace.textContent = "Now Loading...";//なぜか実行されない。
+    showSpace.innerHTML = "<img src='./pic/load.gif' alt='Now Loading...'>";//なぜか実行されない。
 
     const startTime = Date.now();
 
@@ -39,7 +39,7 @@ function myLoadingFetch(){
 
     return new Promise((resolve, reject)=>{
         console.log("Now Loading...");
-        showSpace.textContent = "Now Loading...";
+        showSpace.innerHTML = "<img src='./pic/load.gif' alt='Now Loading...'>";
         
         const userId = inputSpace.value;
         console.log(userId);
@@ -71,4 +71,3 @@ function myLoadingFetch(){
 }
 
 // myLoading(3000)
-
